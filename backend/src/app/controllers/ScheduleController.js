@@ -30,7 +30,6 @@ class ScheduleController {
         },
       },
       attributes: ['id', 'date'],
-      order: ['date'],
       include: [
         {
           model: User,
@@ -45,6 +44,7 @@ class ScheduleController {
           ],
         },
       ],
+      order: ['date'],
     });
 
     return res.json(appointments);
