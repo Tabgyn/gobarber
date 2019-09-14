@@ -22,6 +22,7 @@ module.exports = {
     "prettier/prettier": "error",
     "react/jsx-filename-extension": ["error", { extensions: [".js", ".jsx"] }],
     "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
     "no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
@@ -34,11 +35,11 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   },
-  // settings: {
-  //   "import/resolver": {
-  //     "babel-plugin-root-import": {
-  //       rootPathSuffix: "src"
-  //     },
-  //   },
-  // },
+  settings: {
+    "import/resolver": {
+      "babel-plugin-root-import": {
+        rootPathSuffix: "src"
+      },
+    },
+  },
 };
