@@ -11,7 +11,15 @@ import Notification from '../schemas/notification';
 import CancellationMail from '../jobs/CancellationMail';
 import Queue from '../../lib/Queue';
 
+/**
+ * Appointment Controller
+ */
 class AppointmentController {
+  /**
+   * List all appointments
+   * @param {Object} req
+   * @param {Object} res
+   */
   async index(req, res) {
     const { page = 1 } = req.query;
 
@@ -40,6 +48,11 @@ class AppointmentController {
     return res.json(appointments);
   }
 
+  /**
+   * Create a new Appointment
+   * @param {Object} req
+   * @param {Object} res
+   */
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
@@ -121,6 +134,11 @@ class AppointmentController {
     return res.json(appointment);
   }
 
+  /**
+   * Delete an Appointment
+   * @param {Object} req
+   * @param {Object} res
+   */
   async delete(req, res) {
     const appointment = await Appointment.findByPk(req.params.id, {
       include: [

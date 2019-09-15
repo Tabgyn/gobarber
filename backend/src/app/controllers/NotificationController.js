@@ -1,7 +1,15 @@
 import User from '../models/User';
 import Notification from '../schemas/notification';
 
+/**
+ * Notification Controller
+ */
 class NotificationController {
+  /**
+   * List all Notifications
+   * @param {Object} req
+   * @param {Object} res
+   */
   async index(req, res) {
     /**
      * Check if user is a provider
@@ -25,6 +33,11 @@ class NotificationController {
     return res.json(notifications);
   }
 
+  /**
+   * Update a Notification
+   * @param {Object} req
+   * @param {Object} res
+   */
   async update(req, res) {
     const notification = await Notification.findByIdAndUpdate(
       req.params.id,

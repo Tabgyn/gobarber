@@ -10,7 +10,15 @@ import {
 import { Op } from 'sequelize';
 import Appointment from '../models/Appointment';
 
+/**
+ * Available Controller
+ */
 class AvailableController {
+  /**
+   * List all available appointments
+   * @param {Object} req
+   * @param {Object} res
+   */
   async index(req, res) {
     const { date } = req.query;
 

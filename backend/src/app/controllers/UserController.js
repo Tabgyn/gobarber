@@ -3,7 +3,15 @@ import * as Yup from 'yup';
 import User from '../models/User';
 import File from '../models/File';
 
+/**
+ * User Controller
+ */
 class UserController {
+  /**
+   * Create a new User
+   * @param {Object} req
+   * @param {Object} res
+   */
   async store(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
@@ -30,6 +38,11 @@ class UserController {
     return res.json({ id, name, email, provider });
   }
 
+  /**
+   * Update an User
+   * @param {Object} req
+   * @param {Object} res
+   */
   async update(req, res) {
     const schema = Yup.object().shape({
       name: Yup.string(),

@@ -5,7 +5,15 @@ import Appointment from '../models/Appointment';
 import User from '../models/User';
 import File from '../models/File';
 
+/**
+ * Schedule Controller
+ */
 class ScheduleController {
+  /**
+   * List all Schedules
+   * @param {Object} req
+   * @param {Object} res
+   */
   async index(req, res) {
     /**
      * Check if session user is a provider
