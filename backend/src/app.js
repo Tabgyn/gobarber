@@ -13,7 +13,13 @@ import sentryConfig from './config/sentry';
 
 import './database';
 
+/**
+ * Application Class
+ */
 class App {
+  /**
+   * Application constructor
+   */
   constructor() {
     this.server = express();
 
@@ -24,6 +30,9 @@ class App {
     this.exceptionHandler();
   }
 
+  /**
+   * Middlewares
+   */
   middlewares() {
     this.server.use(Sentry.Handlers.requestHandler());
     this.server.use(cors());
@@ -34,11 +43,17 @@ class App {
     );
   }
 
+  /**
+   * Routes
+   */
   routes() {
     this.server.use(routes);
     this.server.use(Sentry.Handlers.errorHandler());
   }
 
+  /**
+   * Exception handler
+   */
   exceptionHandler() {
     this.server.use(async (err, req, res, next) => {
       if (process.env.NODE_ENV === 'development') {

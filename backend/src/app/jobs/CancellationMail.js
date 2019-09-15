@@ -3,11 +3,18 @@ import pt from 'date-fns/locale/pt';
 
 import Mail from '../../lib/Mail';
 
+/**
+ * Job class that send an email of canceled appointment
+ */
 class CancellationMail {
   get key() {
     return 'CancellationMail';
   }
 
+  /**
+   * Handler job
+   * @param {Object} data
+   */
   async handle({ data }) {
     const { appointment } = data;
 

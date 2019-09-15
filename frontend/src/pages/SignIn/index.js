@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import logo from '~/assets/logo.svg';
 
+/**
+ * Signing In Page
+ */
 export default function SignIn() {
   return (
     <>

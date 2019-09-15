@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 
 import { Wrapper } from './styles';
 
+/**
+ * Default Layout
+ * @param {Element} children
+ */
 export default function DefaultLayout({ children }) {
   return <Wrapper>{children}</Wrapper>;
 }

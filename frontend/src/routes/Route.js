@@ -5,6 +5,10 @@ import PropTypes from 'prop-types';
 import AuthLayout from '~/pages/_layouts/auth';
 import DefaultLayout from '~/pages/_layouts/default';
 
+/**
+ * Route Wrapper
+ * @param {Object} param
+ */
 export default function RouteWrapper({
   component: Component,
   isPrivate,

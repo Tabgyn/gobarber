@@ -1,6 +1,13 @@
 import { Model, Sequelize } from 'sequelize';
 
+/**
+ * File Model
+ */
 class File extends Model {
+  /**
+   * Initialize a File, representing a table in the DB, with attributes and options.
+   * @param {Sequelize} sequelize
+   */
   static init(sequelize) {
     super.init(
       {

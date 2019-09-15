@@ -9,12 +9,21 @@ import databaseConfig from '../config/database';
 
 const models = [User, File, Appointment];
 
+/**
+ * Database
+ */
 class Database {
+  /**
+   * Database constructor
+   */
   constructor() {
     this.init();
     this.mongo();
   }
 
+  /**
+   * Database init
+   */
   init() {
     this.connection = new Sequelize(databaseConfig);
 
@@ -23,6 +32,9 @@ class Database {
       .map(model => model.associate && model.associate(this.connection.models));
   }
 
+  /**
+   * Database mongo
+   */
   mongo() {
     this.mongoConnection = mongoose.connect(process.env.MONGO_URL, {
       useNewUrlParser: true,
