@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
+
+import { signUpRequest } from '~/store/modules/auth/actions';
 
 import logo from '~/assets/logo.svg';
 
@@ -17,7 +20,12 @@ const schema = Yup.object().shape({
  * Page to register in the application
  */
 export default function SignUp() {
-  function handleSubmit(data) {}
+  const dispatch = useDispatch();
+  const loading = useSelector(state => state.auth.loading);
+
+  function handleSubmit({ name, email, password }) {
+    dispatch(signUpRequest(name, email, password));
+  }
   return (
     <>
       <img src={logo} alt="GoBarber" />
@@ -31,7 +39,9 @@ export default function SignUp() {
           placeholder="Sua senha secreta"
         />
 
-        <button type="submit">Criar conta</button>
+        <button type="submit">
+          {loading ? 'Carregando...' : 'Criar conta'}
+        </button>
         <Link to="/">Já possuo login</Link>
       </Form>
     </>
