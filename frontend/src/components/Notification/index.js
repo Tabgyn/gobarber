@@ -35,8 +35,6 @@ export default function Notification() {
         ),
       }));
 
-      console.tron.log(data);
-
       setNotifications(data);
     }
 
