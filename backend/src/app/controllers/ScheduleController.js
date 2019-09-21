@@ -41,7 +41,7 @@ class ScheduleController {
       include: [
         {
           model: User,
-          as: 'provider',
+          as: 'user',
           attributes: ['id', 'name'],
           include: [
             {
