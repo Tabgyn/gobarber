@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { withNavigationFocus } from 'react-navigation';
 
@@ -60,6 +61,14 @@ Dashboard.navigationOptions = {
   tabBarIcon: ({ tintColor }) => (
     <Icon name="event" size={20} color={tintColor} />
   ),
+};
+
+Dashboard.propTypes = {
+  isFocused: PropTypes.bool,
+};
+
+Dashboard.defaultProps = {
+  isFocused: false,
 };
 
 export default withNavigationFocus(Dashboard);
