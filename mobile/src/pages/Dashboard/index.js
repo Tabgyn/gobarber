@@ -14,7 +14,6 @@ function Dashboard({ isFocused }) {
 
   async function loadAppointments() {
     const response = await api.get('appointments');
-    console.tron.log(response.data);
     setAppointments(response.data);
   }
 
